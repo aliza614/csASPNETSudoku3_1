@@ -18,8 +18,8 @@
 <div class="table"> 
     @for(var i=0;i<Model.Sudoku_problem.Length;i++)
     {   
-            char val = Model.Sudoku_problem[i];
-            if (val == '0') val = ' ';
+            String val = ""+Model.Sudoku_problem[i];
+            //if (val == "0") val = new String(" ");
             String mainClass = "input-box ";
             String right_borderClass = "";
             if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
@@ -29,12 +29,12 @@
             if (i % 27>=18) bottom_borderClass = "bottom-border ";
             String top_borderClass = "";
             if (i % 27<=9) top_borderClass = "top-border ";
-            string class_name = mainClass + right_borderClass + left_borderClass + bottom_borderClass + top_borderClass;
+            string class_name = $"{mainClass}{right_borderClass}{left_borderClass}{bottom_borderClass}{top_borderClass}";
         Console.WriteLine(class_name);
         string inputid = "" + i;
             string inputname = "box" + i;
 
-        <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name=@inputname value=@val class=@class_name />
+        <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name=@inputname class=@class_name.ToString() value=@val >
         if (i % 9 == 8)
         {
             <br />

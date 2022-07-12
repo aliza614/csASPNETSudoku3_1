@@ -4,5 +4,6 @@ namespace csASPNETSudoku3_1{
     {
         IEnumerable<Sudoku> GetAllSudoku();
         Sudoku GetSudoku(int id);
+
     }
 }
