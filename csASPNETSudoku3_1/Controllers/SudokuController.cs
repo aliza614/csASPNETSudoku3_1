@@ -32,6 +32,18 @@ namespace csASPNETSudoku3_1.Controllers
             var sudoku=_repository.GetSudoku(id);
             return View(sudoku);
         }
+        public IActionResult UpdateSudoku(int id)
+        {
+            Sudoku _sudoku = _repository.GetSudoku(id);
+            if (_sudoku == null) return View("SudokuNotFound");
+            return View(_sudoku);
+        }
+
+        public IActionResult UpdateSudokuToDatabase(Sudoku sudoku)
+        {
+            _repository.UpdateSudoku(sudoku);
+            return RedirectToAction("UpdateSudoku", new {id=sudoku.IdSudoku});
+        }
         /*public IActionResult CheckPossible()
         {
             return View();

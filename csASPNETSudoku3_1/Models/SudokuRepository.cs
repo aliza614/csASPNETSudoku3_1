@@ -21,5 +21,10 @@ namespace csASPNETSudoku3_1
 
             return _conn.QuerySingle<Sudoku>("select * from sudoku where idsudoku=@idsudoku", new { idsudoku = id });
         }
+
+        public void UpdateSudoku(Sudoku sudoku)
+        {
+            _conn.Execute("UPDATE Sudoku SET sudoku_with_input=@sudoku_with_input where IdSudoku=@idsudoku", new { sudoku_with_input = sudoku.Sudoku_with_input, idsudoku = sudoku.IdSudoku });
+        }
     }
 }

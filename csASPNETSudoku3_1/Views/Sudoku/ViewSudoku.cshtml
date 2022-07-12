@@ -16,33 +16,37 @@
 
 
 <div class="table"> 
-    @for(var i=0;i<Model.Sudoku_problem.Length;i++)
-    {   
-            String val = ""+Model.Sudoku_problem[i];
-            //if (val == "0") val = new String(" ");
-            String mainClass = "input-box ";
-            String right_borderClass = "";
-            if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
-            String left_borderClass = "";
-            if (i % 9 == 0 || i % 9 == 3 || i % 9 == 6) left_borderClass = "left-border ";
-            String bottom_borderClass = "";
-            if (i % 27>=18) bottom_borderClass = "bottom-border ";
-            String top_borderClass = "";
-            if (i % 27<=9) top_borderClass = "top-border ";
-            string class_name = $"{mainClass}{right_borderClass}{left_borderClass}{bottom_borderClass}{top_borderClass}";
-        Console.WriteLine(class_name);
-        string inputid = "" + i;
-            string inputname = "box" + i;
+    @using (Html.BeginForm("UpdateSudokuToDatabase","Sudoku", "Post"))
+    {
+        for(var i=0;i<Model.Sudoku_problem.Length;i++)
+        {   
+                String val = ""+Model.Sudoku_problem[i];
+                //if (val == "0") val = new String(" ");
+                String mainClass = "input-box ";
+                String right_borderClass = "";
+                if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
+                String left_borderClass = "";
+                if (i % 9 == 0 || i % 9 == 3 || i % 9 == 6) left_borderClass = "left-border ";
+                String bottom_borderClass = "";
+                if (i % 27>=18) bottom_borderClass = "bottom-border ";
+                String top_borderClass = "";
+                if (i % 27<=9) top_borderClass = "top-border ";
+                String class_name = $"{mainClass}{right_borderClass}{left_borderClass}{bottom_borderClass}{top_borderClass}";
+            Console.WriteLine(class_name);
+            class_name = class_name.Replace("\"","");
+            String inputid = "" + i;
+                String inputname = "box" + i;
 
-        <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name=@inputname class=@class_name.ToString() value=@val >
-        if (i % 9 == 8)
-        {
-            <br />
-            ;
+            <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name="@inputname" class="@class_name" value="@val" >
+            if (i % 9 == 8)
+            {
+                <br />
+                ;
+            }
+
         }
-
+        <input type="submit" value="Press To Submit Your Answer" class="btn btn-primary">
     }
-    
 </div>
 
 

@@ -2,13 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-/*class site {
-    let Sudoku;
-constructor(){
-    ;
-
-}
-function checkPossible(board){
+  
+function checkPossible(board) {
     let isSolveable = true;
 
     while (HasEmptyPlaces(ConvertBoard(board)) && isSolveable) {
@@ -18,15 +13,16 @@ function checkPossible(board){
             for (let col = 0; col < 9; col++)
             {
                 if (board[row * 9 + col].Value == 0) {
-                    var possible = new List ();
-                    for (let option = 1; option <= 9; option++)
-                        if (Works3(board, option, row, col)) { 
+                    var possible = new List();
+                    for (let option = 1; option <= 9; option++) {
+                        if (Works3(board, option, row, col)) {
                             board[row * 9 + col].Value = option;
                             if (this.CheckPossible(board)) {
                                 possible.Add(option);
                             }
                             board[row * 9 + col].Value = 0;
                         }
+                    }
                     
                     if (possible.Count === 0) {
                         return false;
@@ -88,18 +84,18 @@ function IsInRow3(puzzle, row, option)
     }
     return false;
 }
-function IsInBox3(puzzle, row, col, option)
-{
+function IsInBox3(puzzle, row, col, option) {
     let startRow = row / 3 * 3;
     let startCol = col / 3 * 3;
     let endRow = startRow + 2;
     let endCol = startCol + 2;
     for (let r = startRow; r <= endRow; r++)
-    for (let c = startCol; c <= endCol; c++)
-    if (puzzle[9*r+c] === option && c !== col && r !== row)
-        return true;
+        for (let c = startCol; c <= endCol; c++)
+            if (puzzle[9 * r + c] === option && c !== col && r !== row)
+                return true;
     return false;
-}
+ }
+
 /*
 function ConvertBoard(board)
 {
