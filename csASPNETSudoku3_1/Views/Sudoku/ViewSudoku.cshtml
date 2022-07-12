@@ -17,107 +17,38 @@
 
 <div class="table"> 
     @for(var i=0;i<Model.Sudoku_problem.Length;i++)
-    {   @{
+    {   
             char val = Model.Sudoku_problem[i];
-            if (val == '0') val = '';
-            String mainClass = "input-box";
+            if (val == '0') val = ' ';
+            String mainClass = "input-box ";
             String right_borderClass = "";
-            if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right_border ";
+            if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
+            String left_borderClass = "";
+            if (i % 9 == 0 || i % 9 == 3 || i % 9 == 6) left_borderClass = "left-border ";
+            String bottom_borderClass = "";
+            if (i % 27>=18) bottom_borderClass = "bottom-border ";
+            String top_borderClass = "";
+            if (i % 27<=9) top_borderClass = "top-border ";
+            string class_name = mainClass + right_borderClass + left_borderClass + bottom_borderClass + top_borderClass;
+        Console.WriteLine(class_name);
+        string inputid = "" + i;
+            string inputname = "box" + i;
+
+        <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name=@inputname value=@val class=@class_name />
+        if (i % 9 == 8)
+        {
+            <br />
+            ;
         }
+
     }
-    @if(val=='0')
-    {
-        
-        <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="" class="input-box left-border top-border"/>
-    }
-    else
-    {
-        <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
-    }
-    <input type="number" oninput="CheckPossible" name="box01" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box02" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box03" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box04" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box05" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box06" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box07" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box08" value="" class="input-box right-border top-border"/><br>
-<input type="number" oninput="CheckPossible" name="box09" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box10" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box11" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box12" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box13" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box14" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box15" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box16" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box17" value="" class="input-box right-border "/><br>
-<input type="number" oninput="CheckPossible" name="box18" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box19" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box20" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box21" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box22" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box23" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box24" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box25" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box26" value="" class="input-box right-border bottom-border "/><br>
-<input type="number" oninput="CheckPossible" name="box27" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box28" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box29" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box30" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box31" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box32" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box33" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box34" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box35" value="" class="input-box right-border top-border"/><br>
-<input type="number" oninput="CheckPossible" name="box36" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box37" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box38" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box39" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box40" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box41" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box42" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box43" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box44" value="" class="input-box right-border "/><br>
-<input type="number" oninput="CheckPossible" name="box45" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box46" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box47" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box48" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box49" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box50" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box51" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box52" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box53" value="" class="input-box right-border bottom-border "/><br>
-<input type="number" oninput="CheckPossible" name="box54" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box55" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box56" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box57" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box58" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box59" value="" class="input-box right-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box60" value="" class="input-box left-border top-border"/>
-<input type="number" oninput="CheckPossible" name="box61" value="" class="input-box top-border"/>
-<input type="number" oninput="CheckPossible" name="box62" value="" class="input-box right-border top-border"/><br>
-<input type="number" oninput="CheckPossible" name="box63" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box64" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box65" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box66" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box67" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box68" value="" class="input-box right-border "/>
-<input type="number" oninput="CheckPossible" name="box69" value="" class="input-box left-border "/>
-<input type="number" oninput="CheckPossible" name="box70" value="" class="input-box "/>
-<input type="number" oninput="CheckPossible" name="box71" value="" class="input-box right-border "/><br>
-<input type="number" oninput="CheckPossible" name="box72" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box73" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box74" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box75" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box76" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box77" value="" class="input-box right-border bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box78" value="" class="input-box bottom-border left-border "/>
-<input type="number" oninput="CheckPossible" name="box79" value="" class="input-box bottom-border "/>
-<input type="number" oninput="CheckPossible" name="box80" value="" class="input-box right-border bottom-border "/><br>
+    
 </div>
 
 
-
+<br/>
+<br />
+<br />
 
 
 
@@ -130,16 +61,10 @@
 
 <div class="table"> 
 
-    @if(val=='0')
-    {
-        
-        <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="" class="input-box left-border top-border"/>
-    }
-    else
-    {
-        <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
-    }
-    <input type="number" oninput="CheckPossible" name="box01" value="" class="input-box top-border"/>
+    
+ <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
+    
+<input type="number" oninput="CheckPossible" name="box01" value="" class="input-box top-border"/>
 <input type="number" oninput="CheckPossible" name="box02" value="" class="input-box right-border top-border"/>
 <input type="number" oninput="CheckPossible" name="box03" value="" class="input-box left-border top-border"/>
 <input type="number" oninput="CheckPossible" name="box04" value="" class="input-box top-border"/>
