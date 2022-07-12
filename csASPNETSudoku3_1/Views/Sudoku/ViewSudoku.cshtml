@@ -37,7 +37,7 @@
             String inputid = "" + i;
                 String inputname = "box" + i;
 
-            <input type="number" id=@inputid onChange="Sudoku.CheckPossible()" name="@inputname" class="@class_name" value="@val" >
+            <input type="number" id=@inputid onChange="checkPossible()" name="@inputname" class="@class_name" value="@val" >
             if (i % 9 == 8)
             {
                 <br />
