@@ -69,3 +69,38 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.input-box {
+    width: 25px;
+    box-shadow: none;
+    border-top-style: groove;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    border-width: 1px;
+    margin: 0 !important;
+    float: none !important;
+    padding: 0 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.left-border {
+    border-left-width: 2px;
+}
+
+.right-border {
+    border-right-width: 2px;
+}
+
+.top-border {
+    border-top-width: 2px;
+}
+
+.bottom-border {
+    border-bottom-width: 2px;
+}

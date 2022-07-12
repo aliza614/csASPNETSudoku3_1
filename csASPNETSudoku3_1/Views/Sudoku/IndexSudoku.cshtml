@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<Sudoku>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Sudoku</h1>
+    <p>View the list of available Sudokus</p>
+</div>
+
+<table class="table"> 
+    <tr>
+        <th>ID</th>
+        <th>Sudoku Problem</th>
+        <th>Sudoku Solution</th>
+        <th>Sudoku Progress</th>
+    </tr>
+    @foreach (var sudoku in Model)
+    {
+        <tr>
+            <td><a href=ViewSudoku/@sudoku.IdSudoku>@sudoku.IdSudoku</a></td>
+            <td>@sudoku.Sudoku_problem</td>
+            <td>@sudoku.Sudoku_solution</td>
+            <td>@sudoku.Sudoku_with_input</td>
+        </tr>
+    }
+</table>
+

@@ -1,4 +1,4 @@
-﻿namespace csASPNETMVCSudokuWoDocker.Models
+﻿namespace csASPNETSudoku3_1
 {
     public interface IBoard
     {

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System.Data;
-namespace csASPNETMVCSudokuWoDocker.Models
+using System.Collections.Generic;
+namespace csASPNETSudoku3_1
 {
     public class SudokuRepository : ISudokuRepository
     {
@@ -13,6 +14,12 @@ namespace csASPNETMVCSudokuWoDocker.Models
         public IEnumerable<Sudoku> GetAllSudoku()
         {
             return _conn.Query<Sudoku>("Select * from sudoku");
+        }
+
+        public Sudoku GetSudoku(int id)
+        {
+
+            return _conn.QuerySingle<Sudoku>("select * from sudoku where idsudoku=@idsudoku", new { idsudoku = id });
         }
     }
 }
