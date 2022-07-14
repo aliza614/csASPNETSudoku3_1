@@ -4,7 +4,7 @@ using Xunit;
 namespace csASPNETSudoku3_1.Test
 {
     public class UnitTest1
-    {
+    {/*
         [Theory]
         [InlineData()]
         []
@@ -16,5 +16,6 @@ namespace csASPNETSudoku3_1.Test
             //Assert
 
         }
+        */
     }
 }

@@ -39,6 +39,9 @@ namespace csASPNETSudoku3_1
 
         public void UpdateSudoku(Sudoku sudoku)
         {
+            Console.WriteLine(sudoku.Sudoku_with_input);
+            //for loop to update each char in sudoku_with_input
+            
             _conn.Execute("UPDATE Sudoku SET sudoku_with_input=@sudoku_with_input where IdSudoku=@idsudoku", new { sudoku_with_input = sudoku.Sudoku_with_input, idsudoku = sudoku.IdSudoku });
         }
     }

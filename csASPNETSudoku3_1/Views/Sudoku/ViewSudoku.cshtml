@@ -37,7 +37,8 @@
             String inputid = "" + i;
                 String inputname = "box" + i;
 
-            <input type="number" id=@inputid onChange="checkPossible()" name="@inputname" class="@class_name" value="@val" >
+            <input type="number" asp-for="@Model.Sudoku_with_input[i]" id=@inputid  name="@inputname" class="@class_name" value="@val" >
+            @*@Html.TextBoxFor(m => m.Sudoku_with_input[0])*@
             if (i % 9 == 8)
             {
                 <br />
@@ -46,9 +47,10 @@
 
         }
         <input type="submit" value="Press To Submit Your Answer" class="btn btn-primary">
+       
     }
 </div>
-
+ @*Html.TextBoxFor(m=>m.Sudoku_with_input[0])*@
 
 <br/>
 <br />
@@ -58,15 +60,13 @@
 
 
 
-
-
-
+@*
 
 
 <div class="table"> 
-
+  
     
- <input type="number" id="0" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
+ <input type="number" id="0" oninput="CheckPossible" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
     
 <input type="number" oninput="CheckPossible" name="box01" value="" class="input-box top-border"/>
 <input type="number" oninput="CheckPossible" name="box02" value="" class="input-box right-border top-border"/>
@@ -150,3 +150,4 @@
 <input type="number" oninput="CheckPossible" name="box80" value="" class="input-box right-border bottom-border "/><br>
 </div>
 
+*@

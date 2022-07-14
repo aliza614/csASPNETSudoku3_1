@@ -7,6 +7,15 @@
         public string Sudoku_solution;
         public string Sudoku_with_input;
 
+
+        /*public Sudoku(int idSudoku, string sudoku_problem, string sudoku_solution, string sudoku_with_input)
+        {
+            IdSudoku = idSudoku;
+            Sudoku_problem = sudoku_problem;
+            Sudoku_solution = sudoku_solution;
+            Sudoku_with_input = sudoku_with_input;
+        }*/
+
         override
         public string ToString()
         {

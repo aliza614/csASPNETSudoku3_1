@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
   
-function checkPossible(board) {
+/*function checkPossible(board) {
     let isSolveable = true;
 
     while (HasEmptyPlaces(board) && isSolveable) {
