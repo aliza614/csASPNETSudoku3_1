@@ -6,7 +6,7 @@
 function checkPossible(board) {
     let isSolveable = true;
 
-    while (HasEmptyPlaces(ConvertBoard(board)) && isSolveable) {
+    while (HasEmptyPlaces(board) && isSolveable) {
         isSolveable = false;
         for (let row = 0; row < 9; row++)
         {

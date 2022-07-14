@@ -21,7 +21,7 @@
         for(var i=0;i<Model.Sudoku_problem.Length;i++)
         {   
                 String val = ""+Model.Sudoku_problem[i];
-                //if (val == "0") val = new String(" ");
+                if (val == "0") val = new String("");
                 String mainClass = "input-box ";
                 String right_borderClass = "";
                 if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
@@ -66,7 +66,7 @@
 <div class="table"> 
 
     
- <input type="number" id="1" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
+ <input type="number" id="0" onChange="Sudoku.CheckPossible()" name="box00" value="@Model.Sudoku_problem[0]" class="input-box left-border top-border"/>
     
 <input type="number" oninput="CheckPossible" name="box01" value="" class="input-box top-border"/>
 <input type="number" oninput="CheckPossible" name="box02" value="" class="input-box right-border top-border"/>

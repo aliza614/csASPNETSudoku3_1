@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace csASPNETSudoku3_1
 {
 
@@ -10,9 +11,21 @@ namespace csASPNETSudoku3_1
         public Board(string s)
         {
             for (var i = 0; i < Sudoku.Length; i++)
-                Sudoku[i] = new Square(1 * s[i]);
+                Sudoku[i] = new Square(int.Parse( ""+s[i]));
         }
+        
+        public string BoardConvertString()
+        {
+            IEnumerable<int> enumerable=this.Sudoku.Select(x => x.Value);
+            string str = "";
+            foreach (var x in this.Sudoku)
+            {
+                str += x.Value;
+                Console.WriteLine(str);
+            }
+            return str;
 
+        }
         public bool CheckPossible(Board board)
         {
             bool isSolveable = true;
@@ -61,18 +74,18 @@ namespace csASPNETSudoku3_1
             }
             return true;
         }
-        public bool HasEmptyPlaces(int[][] puzzle)
+        public bool HasEmptyPlaces(int[,] puzzle)
         {
-            for (int r = 0; r < puzzle.Length; r++)
+            for (int r = 0; r < 9; r++)
             {
-                for (int c = 0; c < puzzle[r].Length; c++)
+                for (int c = 0; c < 9; c++)
                 {
-                    if (puzzle[r][c] == 0) return true;
+                    if (puzzle[r,c] == 0) return true;
                 }
             }
             return false;
         }
-        public bool Works3(int[][] puzzle, int option, int row, int col)
+        public bool Works3(int[,] puzzle, int option, int row, int col)
         {
             if (IsInCol3(puzzle, col, option)) return false;
             if (IsInRow3(puzzle, row, option)) return false;
@@ -81,30 +94,30 @@ namespace csASPNETSudoku3_1
             return true;
 
         }
-        public bool IsInCol3(int[][] puzzle, int col, int option)
+        public bool IsInCol3(int[,] puzzle, int col, int option)
         {
 
-            for (int r = 0; r < puzzle.Length; r++)
+            for (int r = 0; r < 9; r++)
             {
-                if (puzzle[r][col] == option)
+                if (puzzle[r,col] == option)
                 {
                     return true;
                 }
             }
             return false;
         }
-        public bool IsInRow3(int[][] puzzle, int row, int option)
+        public bool IsInRow3(int[,] puzzle, int row, int option)
         {
-            for (int c = 0; c < puzzle.Length; c++)
+            for (int c = 0; c < 9; c++)
             {
-                if (puzzle[row][c] == option)
+                if (puzzle[row,c] == option)
                 {
                     return true;
                 }
             }
             return false;
         }
-        public bool IsInBox3(int[][] puzzle, int row, int col, int option)
+        public bool IsInBox3(int[,] puzzle, int row, int col, int option)
         {
             int startRow = row / 3 * 3;
             int startCol = col / 3 * 3;
@@ -112,18 +125,19 @@ namespace csASPNETSudoku3_1
             int endCol = startCol + 2;
             for (int r = startRow; r <= endRow; r++)
                 for (int c = startCol; c <= endCol; c++)
-                    if (puzzle[r][c] == option && c != col && r != row)
+                    if (puzzle[r,c] == option && c != col && r != row)
                         return true;
             return false;
         }
-        public int[][] ConvertBoard(Board board)
+        public int[,] ConvertBoard(Board board)
         {
-            int[][] answer = Array.Empty<int[]>();
+            int[,] answer = new int[9, 9];//Array.Empty<int[]>();
             for (int i = 0; i < board.Sudoku.Length; i++)
             {
                 int row = i / 9;
                 int col = i % 9;
-                answer[row][col] = board.Sudoku[i].Value;
+          
+                answer[row,col] = board.Sudoku[i].Value;
             }
             return answer;
         }

@@ -6,7 +6,7 @@
     @for(var i=0;i<Model.Sudoku_problem.Length;i++)
     {   
             String val = ""+Model.Sudoku_problem[i];
-            //if (val == "0") val = new String(" ");
+            if (val == "0") val = new String("");
             String mainClass = "input-box ";
             String right_borderClass = "";
             if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";

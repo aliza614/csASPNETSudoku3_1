@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using System.Data;
+using System;
 using System.Collections.Generic;
 namespace csASPNETSudoku3_1
 {
@@ -19,8 +20,22 @@ namespace csASPNETSudoku3_1
         public Sudoku GetSudoku(int id)
         {
 
-            return _conn.QuerySingle<Sudoku>("select * from sudoku where idsudoku=@idsudoku", new { idsudoku = id });
+            Sudoku sudoku= _conn.QuerySingle<Sudoku>("select * from sudoku where idsudoku=@idsudoku", new { idsudoku = id });
+            if(sudoku.Sudoku_solution==null)
+            {
+                Board b = new Board(sudoku.Sudoku_problem);
+                b.CheckPossible(b);
+                Console.WriteLine(b.BoardConvertString());
+                _conn.Execute("UPDATE `sudoku` SET `sudoku_solution` = @sudoku_sol WHERE idsudoku=@id; ", new { sudoku_sol = b.BoardConvertString() , id=sudoku.IdSudoku});
+                sudoku.Sudoku_solution = b.ToString();
+            }
+
+            //reset the game
+            sudoku.Sudoku_with_input = sudoku.Sudoku_problem;
+            _conn.Execute("UPDATE sudoku SET sudoku_with_input =@sudoku_problem WHERE idsudoku=@id", new { sudoku_problem = sudoku.Sudoku_problem, id = sudoku.IdSudoku });
+            return sudoku;
         }
+
 
         public void UpdateSudoku(Sudoku sudoku)
         {
