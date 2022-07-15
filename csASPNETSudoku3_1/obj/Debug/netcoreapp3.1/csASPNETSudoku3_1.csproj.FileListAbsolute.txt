@@ -364,4 +364,5 @@ C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1
 C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\csASPNETSudoku3_1.genruntimeconfig.cache
 C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\Razor\Views\Sudoku\IndexSudoku.cshtml.g.cs
 C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\Razor\Views\Sudoku\ViewSudoku.cshtml.g.cs
-C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\Razor\Views\Sudoku\UpdateSudoku.cshtml.g.cs
+C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\Razor\Views\Sudoku\FinishedSudoku.cshtml.g.cs
+C:\Users\Owner\repos\csASPNETSudoku3_1\csASPNETSudoku3_1\obj\Debug\netcoreapp3.1\Razor\Views\Sudoku\RedoSudoku.cshtml.g.cs
