@@ -53,15 +53,37 @@
                 $(document).ready(function() {
                     for (let i = 0; i < 81; i++) {
                         jQuery("#" +i).on('input', function() {
+                            //attempt 1
+                            //var inputValues = [];
+
+                            //$('input').each(() => {
+                            //    inputValues.push($(this).val());
+                            //});
+
+                            //$('input[name="values"]').val(inputValues.join(''));
+                            //attempt 2
+                            //$('input[name="values"]').val("");
+                            //for (let j = 0; j < 81; j++) {
+                            //    $('input[name="values"]').val( $('input[name="values"]').val+$("#" + j).val);
+                            //}
+                            //attempt 3
+                            //var inputValues = [];
+
+                            //document.querySelectorAll("input").each(() => {
+                            //    inputValues.push($(this).val());
+                            //});
+
+                            //$('input[name="values"]').val(inputValues.join(''));
+                            //attempt 4--WORKS
                             var inputValues = [];
 
-                            $('input').each(() => {
-                                inputValues.push($(this).val());
+                            $('input[type=number]').each((index, domObject) => {
+                                
+                                    inputValues.push($(domObject).val());
+                                    if($(domObject).val()=="") inputValues.push('0');
                             });
 
                             $('input[name="values"]').val(inputValues.join(''));
-
-
                         });
                         console.log($('input[name="values"]'));
                     }
