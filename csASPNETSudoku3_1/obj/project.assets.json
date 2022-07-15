@@ -36,6 +36,9 @@
           "lib/netstandard2.0/Google.Protobuf.dll": {}
         }
       },
+      "jQuery/3.6.0": {
+        "type": "package"
+      },
       "K4os.Compression.LZ4/1.2.6": {
         "type": "package",
         "dependencies": {
@@ -586,6 +589,29 @@
         "lib/netstandard2.0/Google.Protobuf.dll",
         "lib/netstandard2.0/Google.Protobuf.pdb",
         "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "jQuery/3.6.0": {
+      "sha512": "sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
+      "type": "package",
+      "path": "jquery/3.6.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-3.6.0-vsdoc.js",
+        "Content/Scripts/jquery-3.6.0.js",
+        "Content/Scripts/jquery-3.6.0.min.js",
+        "Content/Scripts/jquery-3.6.0.min.map",
+        "Content/Scripts/jquery-3.6.0.slim.js",
+        "Content/Scripts/jquery-3.6.0.slim.min.js",
+        "Content/Scripts/jquery-3.6.0.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.6.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.6.0.nupkg.sha512",
+        "jquery.nuspec"
       ]
     },
     "K4os.Compression.LZ4/1.2.6": {
@@ -1439,7 +1465,8 @@
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.123",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.24",
-      "MySql.Data >= 8.0.29"
+      "MySql.Data >= 8.0.29",
+      "jQuery >= 3.6.0"
     ]
   },
   "packageFolders": {
@@ -1492,6 +1519,10 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.29, )"
+          },
+          "jQuery": {
+            "target": "Package",
+            "version": "[3.6.0, )"
           }
         },
         "imports": [

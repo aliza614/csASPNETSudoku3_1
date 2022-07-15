@@ -39,10 +39,11 @@ namespace csASPNETSudoku3_1.Controllers
             return View(_sudoku);
         }
 
-        public IActionResult UpdateSudokuToDatabase(Sudoku sudoku)
+        public IActionResult UpdateSudokuToDatabase(string values, int id)
         {
-            _repository.UpdateSudoku(sudoku);
-            return RedirectToAction("UpdateSudoku", new {id=sudoku.IdSudoku});
+            
+            _repository.UpdateSudoku(values, id);
+            return RedirectToAction("UpdateSudoku", new {id=id});
         }
         /*public IActionResult CheckPossible()
         {

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "dPMMn6AzWWBMlMKmUWsTaKTR0mUPSaYLAthUuYY4TjFRWnKqA2zAo5/eyYDSb8EOcrQf+hiY3gDFBUPZlRKNQA==",
+  "dgSpecHash": "SPKgU9QRTD0BLdm6EaBKeQ5O8Mfgv73LQC0Prz+R84NCEJf687TOWbhhygYGDlFmLXqRGFqs+rjA2Mj6S0UVfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\repos\\csASPNETSudoku3_1\\csASPNETSudoku3_1\\csASPNETSudoku3_1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\jquery\\3.6.0\\jquery.3.6.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",

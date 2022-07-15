@@ -34,6 +34,7 @@
           "Dapper": "2.0.123",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.24",
           "MySql.Data": "8.0.29",
+          "jQuery": "3.6.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -362,6 +363,7 @@
           "lib/netstandard2.0/Google.Protobuf.dll": {}
         }
       },
+      "jQuery/3.6.0": {},
       "K4os.Compression.LZ4/1.2.6": {
         "dependencies": {
           "System.Memory": "4.5.4"
@@ -2427,6 +2429,13 @@
       "sha512": "sha512-fd07/ykL4O4FhqrZIELm5lmiyOHfdPg9+o+hWr6tcfRdS7tHXnImg/2wtogLzlW2eEmr0J7j6ZrZvaWOLiJbxQ==",
       "path": "google.protobuf/3.19.4",
       "hashPath": "google.protobuf.3.19.4.nupkg.sha512"
+    },
+    "jQuery/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
+      "path": "jquery/3.6.0",
+      "hashPath": "jquery.3.6.0.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.2.6": {
       "type": "package",

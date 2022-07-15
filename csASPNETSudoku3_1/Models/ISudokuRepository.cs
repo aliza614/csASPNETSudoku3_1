@@ -5,5 +5,6 @@ namespace csASPNETSudoku3_1{
         IEnumerable<Sudoku> GetAllSudoku();
         Sudoku GetSudoku(int id);
         public void UpdateSudoku(Sudoku sudoku);
+        void UpdateSudoku(string values, int id);
     }
 }

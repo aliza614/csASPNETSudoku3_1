@@ -16,26 +16,28 @@
 
 
 <div class="table"> 
-    @using (Html.BeginForm("UpdateSudokuToDatabase","Sudoku", "Post"))
+    @using (Html.BeginForm("UpdateSudokuToDatabase", "Sudoku", "Post"))
     {
-        for(var i=0;i<Model.Sudoku_problem.Length;i++)
-        {   
-                String val = ""+Model.Sudoku_problem[i];
-                if (val == "0") val = new String("");
-                String mainClass = "input-box ";
-                String right_borderClass = "";
-                if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
-                String left_borderClass = "";
-                if (i % 9 == 0 || i % 9 == 3 || i % 9 == 6) left_borderClass = "left-border ";
-                String bottom_borderClass = "";
-                if (i % 27>=18) bottom_borderClass = "bottom-border ";
-                String top_borderClass = "";
-                if (i % 27<=9) top_borderClass = "top-border ";
-                String class_name = $"{mainClass}{right_borderClass}{left_borderClass}{bottom_borderClass}{top_borderClass}";
+        <input type="hidden" name="values" value="@Model.Sudoku_with_input">
+        <input type="hidden" name="id" value="@Model.IdSudoku">
+        for (var i = 0; i < Model.Sudoku_problem.Length; i++)
+        {
+            String val = "" + Model.Sudoku_problem[i];
+            if (val == "0") val = new String("");
+            String mainClass = "input-box ";
+            String right_borderClass = "";
+            if (i % 9 == 8 || i % 9 == 2 || i % 9 == 5) right_borderClass = "right-border ";
+            String left_borderClass = "";
+            if (i % 9 == 0 || i % 9 == 3 || i % 9 == 6) left_borderClass = "left-border ";
+            String bottom_borderClass = "";
+            if (i % 27 >= 18) bottom_borderClass = "bottom-border ";
+            String top_borderClass = "";
+            if (i % 27 <= 9) top_borderClass = "top-border ";
+            String class_name = $"{mainClass}{right_borderClass}{left_borderClass}{bottom_borderClass}{top_borderClass}";
             Console.WriteLine(class_name);
-            class_name = class_name.Replace("\"","");
+            class_name = class_name.Replace("\"", "");
             String inputid = "" + i;
-                String inputname = "box" + i;
+            String inputname = "box" + i;
 
             <input type="number" asp-for="@Model.Sudoku_with_input[i]" id=@inputid  name="@inputname" class="@class_name" value="@val" >
             @*@Html.TextBoxFor(m => m.Sudoku_with_input[0])*@
@@ -44,11 +46,38 @@
                 <br />
                 ;
             }
-
         }
-        <input type="submit" value="Press To Submit Your Answer" class="btn btn-primary">
-       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+
+                $(document).ready(function() {
+                    for (let i = 0; i < 81; i++) {
+                        jQuery("#" +i).on('input', function() {
+                            var inputValues = [];
+
+                            $('input').each(() => {
+                                inputValues.push($(this).val());
+                            });
+
+                            $('input[name="values"]').val(inputValues.join(''));
+
+
+                        });
+                        console.log($('input[name="values"]'));
+                    }
+                });
+                
+            
+            </script>
+        
+
+            <input type="submit" value="Press To Submit Your Answer" class="btn btn-primary">
+        
+        @*Html.HiddenFor(model => model.Sudoku_with_input,new{ input=})*@
+        
+        
     }
+
 </div>
  @*Html.TextBoxFor(m=>m.Sudoku_with_input[0])*@
 

@@ -21,5 +21,12 @@
         {
             return IdSudoku+" problem:"+Sudoku_problem+" solution:"+Sudoku_solution+" progress"+Sudoku_with_input;
     }
+        /*
+        public string GetInputs()
+        {
+            for
+            this.Sudoku_with_input
+        }
+        */
     }
 }
