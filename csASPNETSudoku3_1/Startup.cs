@@ -1,3 +1,4 @@
+using csASPNETSudoku3_1.Data;
 using csASPNETSudoku3_1.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,7 +31,7 @@ namespace csASPNETSudoku3_1
             
             services.AddScoped<IDbConnection>((s) =>
             {
-                IDbConnection conn = new MySqlConnection(Configuration.GetConnectionString("mockdata"));
+                IDbConnection conn = new NpgsqlConnection(DataUtility.GetConnectionString(Configuration));
                 conn.Open();
                 return conn;
             });
